@@ -18,19 +18,16 @@ btn-primary btn-sm">&larr; Back</a>
  </div>
  </div>
  <div class="card-body">
- <form action="{{ route('products.update', $product-
->id) }}" method="post">
+ <form action="{{ route('products.update', $product->id) }}" method="post">
  @csrf
 @method("PUT")
  <div class="mb-3 row">
  <label for="code" class="col-md-4 col-formlabel text-md-end text-start">Code</label>
  <div class="col-md-6">
  <input type="text" class="form-control 
-@error('code') is-invalid @enderror" id="code" name="code" value="{{ 
-$product->code }}">
+@error('code') is-invalid @enderror" id="code" name="code" value="{{ $product->code }}">
  @error('code')
- <span class="text-danger">{{ $message 
-}}</span>
+ <span class="text-danger">{{ $message }}</span>
  @enderror
  </div>
  </div>
@@ -38,11 +35,9 @@ $product->code }}">
  <label for="name" class="col-md-4 col-formlabel text-md-end text-start">Name</label>
  <div class="col-md-6">
  <input type="text" class="form-control 
-@error('name') is-invalid @enderror" id="name" name="name" value="{{ 
-$product->name }}">
+@error('name') is-invalid @enderror" id="name" name="name" value="{{ $product->name }}">
  @error('name')
- <span class="text-danger">{{ $message 
-}}</span>
+ <span class="text-danger">{{ $message }}</span>
  @enderror
  </div>
  </div>
@@ -53,8 +48,7 @@ $product->name }}">
 @error('quantity') is-invalid @enderror" id="quantity" name="quantity"
 value="{{ $product->quantity }}">
  @error('quantity')
- <span class="text-danger">{{ $message 
-}}</span>
+ <span class="text-danger">{{ $message }}</span>
  @enderror
  </div>
  </div>
@@ -65,8 +59,7 @@ value="{{ $product->quantity }}">
 class="form-control @error('price') is-invalid @enderror" id="price"
 name="price" value="{{ $product->price }}">
  @error('price')
- <span class="text-danger">{{ $message 
-}}</span>
+ <span class="text-danger">{{ $message }}</span>
  @enderror
  </div>
  </div>
@@ -77,8 +70,7 @@ name="price" value="{{ $product->price }}">
 @error('description') is-invalid @enderror" id="description"
 name="description">{{ $product->description }}</textarea>
  @error('description')
- <span class="text-danger">{{ $message 
-}}</span>
+ <span class="text-danger">{{ $message }}</span>
  @enderror
  </div>
  </div>
