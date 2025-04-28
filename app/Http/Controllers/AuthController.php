@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Product;
+
 
 class AuthController extends Controller
 {
@@ -37,7 +39,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/dashboard'); // redirect after login
+            return redirect()->intended(route('products.index'));
         }
 
         return back()->withErrors(['email' => 'Invalid credentials.']);
@@ -45,6 +47,18 @@ class AuthController extends Controller
 
     public function logout() {
         Auth::logout();
-        return redirect('/login');
+        return redirect('/login')->with('success', 'You have been logged out.');
     }
+
+    public function productPage() {
+    $products = Product::paginate(10);
+    return view('products.index', ['products' => $products]);
+}
+
+    public function index() {
+    $products = Product::paginate(10);
+    return view('products.index', compact('products'));
+}
+
+
 }
