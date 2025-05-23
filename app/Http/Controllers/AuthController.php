@@ -49,12 +49,6 @@ class AuthController extends Controller
         Auth::logout();
         return redirect('/login')->with('success', 'You have been logged out.');
     }
-
-    public function productPage() {
-    $products = Product::paginate(10);
-    return view('products.index', ['products' => $products]);
-}
-
     public function index() {
     $products = Product::paginate(10);
     return view('products.index', compact('products'));
