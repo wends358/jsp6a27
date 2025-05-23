@@ -38,6 +38,7 @@ class ProductController extends Controller
         $data['image'] = $request->file('image')->store('product_images', 'public');
     }
 
+
     Product::create($data);
 
     return redirect()->route('products.index')

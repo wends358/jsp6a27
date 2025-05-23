@@ -12,6 +12,15 @@ min.css">
 href="https://cdn.jsdelivr.net/npm/bootstrapicons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body> 
+
+    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+    @csrf
+    <button type="submit" class="btn btn-danger btn-sm">
+        <i class="bi bi-box-arrow-right"></i> Logout
+    </button>
+</form>
+
+
  <div class="container">
  <h3 class=" mt-3">Simple Laravel 11 CRUD Application 
 Tutorial</h3>
